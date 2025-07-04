@@ -1,10 +1,14 @@
+package model;
+
+import java.time.LocalDate;
+
 public class Product {
     private String name;
-    private Double price;
-    private Int quantity;
+    private double price;
+    private int quantity;
     private LocalDate expiryDate;
 
-    public Product(String name, double price, int quantity,LocalDate expiryDate) {
+    public Product(String name, double price, int quantity, LocalDate expiryDate) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
@@ -38,7 +42,7 @@ public class Product {
             this.quantity = quantity;
         }
     }
-    public Int decreaseQuantity(int amount) {
+    public int decreaseQuantity(int amount) {
         if (amount <= quantity) {
             this.quantity -= amount;
         } else {
