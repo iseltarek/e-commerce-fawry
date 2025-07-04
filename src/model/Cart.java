@@ -1,8 +1,14 @@
-public class Cart {
-    Private List<CartItem> items;
+package model;
 
-    Cart(){
-      this.items = new List<CartItem>;
+import java.util.ArrayList;
+import java.util.List;
+
+
+public class Cart {
+    private List<CartItem> items;
+
+   public Cart(){
+     items = new ArrayList<>();
     }
 
     public void AddProduct(Product product, int quantity){
@@ -20,5 +26,15 @@ public class Cart {
     }
     public boolean isEmpty() {
         return items.isEmpty();
+    }
+    public List<CartItem> getItems() {
+        return items;
+    }
+    public double getSubtotal() {
+        double subtotal = 0;
+        for (CartItem item : items) {
+            subtotal += item.getTotalPrice();
+        }
+        return subtotal;
     }
 }
